@@ -4,8 +4,6 @@ pragma solidity 0.8.28;
 
 contract SimpleCrowdfund{
 
-    uint256 public goal;
-    uint256 public deadline;
     uint256 public amountRaised;
     uint256 public contributors;
     
@@ -18,8 +16,11 @@ contract SimpleCrowdfund{
     error notTheOwner();
     error ZeroAddress();
 
+    
     address immutable i_owner = msg.sender;
-    constructor(address _owner){
+    uint256 immutable timeInitiation = block.timestamp; // Setting up initiation time
+
+    constructor(address _owner){ //add how much houres owner has to complete the task
         if (_owner == address(0)){
             revert ZeroAddress();
         }
@@ -44,6 +45,15 @@ contract SimpleCrowdfund{
         // check: If the goal is not reached by the time the deadline passes, backers should be able to get their ETH back by calling refund()
         // check:  If the goal is reached or if we are still before the deadline, calling refund() should fail.
         
+    }
+
+    function timePassed(uint256 _passedTime) public view returns (bool isEnded){  // CHANGE visibility
+        uint256 currentTimestamp = block.timestamp;
+        if (currentTimestamp <= timeInitiation + _passedTime){
+            return true;
+        }
+    
+
     }
 
 }
