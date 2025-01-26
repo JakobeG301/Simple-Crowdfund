@@ -18,12 +18,22 @@
 			},
 			{
 				"inputs": [],
-				"name": "ZeroAddress",
+				"name": "CampaignIsEnded",
 				"type": "error"
 			},
 			{
 				"inputs": [],
-				"name": "notTheOwner",
+				"name": "CampaignIsNotEnded",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotTheOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ZeroAddress",
 				"type": "error"
 			},
 			{
@@ -43,6 +53,25 @@
 					}
 				],
 				"name": "Contributed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountRaised",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "GOAL",
+						"type": "uint256"
+					}
+				],
+				"name": "Raised",
 				"type": "event"
 			},
 			{
@@ -84,6 +113,23 @@
 				"type": "event"
 			},
 			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "GOAL",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "amountRaised",
 				"outputs": [
@@ -98,6 +144,30 @@
 			},
 			{
 				"inputs": [],
+				"name": "campaignEnded",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "contributor",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
 				"name": "contribute",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -118,25 +188,45 @@
 			},
 			{
 				"inputs": [],
+				"name": "deadline",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "goalReached",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "refund",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_passedTime",
-						"type": "uint256"
-					}
-				],
-				"name": "timePassed",
+				"inputs": [],
+				"name": "secToComplete",
 				"outputs": [
 					{
-						"internalType": "bool",
-						"name": "isEnded",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -148,6 +238,10 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -178,11 +272,11 @@
 	},
 	"sources": {
 		"SimpleCrowdfund.sol": {
-			"keccak256": "0x3559827ffb6fbb18a5e37b0894533caeaed8efea57664e9295f4c45201278a22",
+			"keccak256": "0xdef2692e8b0cbeefb7afd582fc44cc2c80b8c2214c71188bbf1c8c40e6c968e5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://db51b6f7c628069b8b2023c4d33754abe326451dfc72ba367554155ea2460a71",
-				"dweb:/ipfs/QmTBuQRcTgSSryMr5qSNFLxNwjnS1Z7aZd8pRCqTdpj1uf"
+				"bzz-raw://f241add157abef6900ce1e21518a61300f30f6bb61247eaff321dce546d2bde3",
+				"dweb:/ipfs/QmPst3Ed1i7TZ5mRZeRWWQLt6dXNQ7HiLw7ZsMdhK6Bstx"
 			]
 		}
 	},
