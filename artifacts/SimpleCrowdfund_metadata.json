@@ -16,6 +16,11 @@
 						"internalType": "uint256",
 						"name": "_secToComplete",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_GOAL",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -23,32 +28,37 @@
 			},
 			{
 				"inputs": [],
-				"name": "CallFailed",
+				"name": "SimpleCrowdfund__CallFailed",
 				"type": "error"
 			},
 			{
 				"inputs": [],
-				"name": "CampaignIsEnded",
+				"name": "SimpleCrowdfund__CampaignIsEnded",
 				"type": "error"
 			},
 			{
 				"inputs": [],
-				"name": "CampaignIsNotEnded",
+				"name": "SimpleCrowdfund__CampaignIsNotEnded",
 				"type": "error"
 			},
 			{
 				"inputs": [],
-				"name": "NotTheOwner",
+				"name": "SimpleCrowdfund__NoPermission",
 				"type": "error"
 			},
 			{
 				"inputs": [],
-				"name": "ToLittleDonation",
+				"name": "SimpleCrowdfund__TimeOut",
 				"type": "error"
 			},
 			{
 				"inputs": [],
-				"name": "ZeroAddress",
+				"name": "SimpleCrowdfund__ToLittleDonation",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "SimpleCrowdfund__ZeroAddress",
 				"type": "error"
 			},
 			{
@@ -111,44 +121,6 @@
 			{
 				"stateMutability": "payable",
 				"type": "fallback"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "contributor",
-						"type": "address"
-					}
-				],
-				"name": "AlreadyContributed",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "isContributor",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "contributor",
-						"type": "address"
-					}
-				],
-				"name": "ContributorToAmount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "amountDonated",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
 			},
 			{
 				"inputs": [
@@ -256,7 +228,33 @@
 			},
 			{
 				"inputs": [],
+				"name": "i_owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "i_secToComplete",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "i_timeInitiation",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -285,6 +283,19 @@
 				"name": "refund",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "timePassed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isEnded",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -327,11 +338,11 @@
 	},
 	"sources": {
 		"SimpleCrowdfund.sol": {
-			"keccak256": "0x058104369f404e8052159c45eba5443a199433dd413476903cad1f3f5cdffed8",
+			"keccak256": "0x57ea749528e7b2e0b14c08bf68cfab85317569476ff8c7be5d567613f5982d74",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a79384dda109e3eb82a69b2f7a7ce338619ca6ced8f6095b902de7026c48596a",
-				"dweb:/ipfs/QmWRPP2jB97jxGLWe2rZakgjTUcDnXxLbxpVJEzco12gLJ"
+				"bzz-raw://7a050271eb1c1fbc1b0059350ade035edca3e0ed006139d4e81bb5d7df552cbc",
+				"dweb:/ipfs/QmPMBGRXaLpN8i2iLn5acDeVJu6jeNFXQquHhqRj6vsGnw"
 			]
 		}
 	},
